@@ -1,0 +1,18 @@
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#categories{
+  display: flex;
+  column-gap: 20px;
+}
+
+#categories li{
+  list-style: none;
+}
+
+footer{
+  border: solid black 2px;
+}
