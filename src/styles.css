@@ -121,7 +121,6 @@ header img {
   font-weight: bolder;
 }
 
-
 .modal {
   display: none;
   position: fixed;
@@ -200,12 +199,12 @@ textarea[type="text"] {
   margin-top: 10px;
 }
 
-.message{
-  display:none;
+.message {
+  display: none;
 }
 
-.message.active{
-  display:block;
+.message.active {
+  display: block;
 }
 
 footer {

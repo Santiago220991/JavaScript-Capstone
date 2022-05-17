@@ -57,24 +57,23 @@ myPromise.then((result) => {
       close.addEventListener('click', () => {
         popupinfo.remove();
       });
-  const inputname=document.querySelector(".username")
-  const inputtext=document.querySelector(".insight")
-  const commenttext = document.querySelector('.addnew-btn');
-  const message=document.querySelector(".message")
-  commenttext.addEventListener('click', () => {
-    if(inputname.value!==""&& inputtext.value!==""){
-      postComments(commenturl, index,inputname.value,inputtext.value);
-      inputname.value = '';
-      inputtext.value = '';
-    }else{
-      message.textContent="Inputs should not be empty"
-      message.classList.add("active")
-      setTimeout(()=>{hide(message)}, 2000);
-    }
+      const inputname = document.querySelector('.username');
+      const inputtext = document.querySelector('.insight');
+      const commenttext = document.querySelector('.addnew-btn');
+      const message = document.querySelector('.message');
+      commenttext.addEventListener('click', () => {
+        if (inputname.value !== '' && inputtext.value !== '') {
+          postComments(commenturl, index, inputname.value, inputtext.value);
+          inputname.value = '';
+          inputtext.value = '';
+        } else {
+          message.textContent = 'Inputs should not be empty';
+          message.classList.add('active');
+          setTimeout(() => { hide(message); }, 2000);
+        }
+      });
     });
   });
-      
-    });
 
   const liketext = document.querySelectorAll('.like-text');
   const likebutton = document.querySelectorAll('.like');
@@ -102,5 +101,4 @@ myPromise.then((result) => {
       });
     });
   });
-  
 });

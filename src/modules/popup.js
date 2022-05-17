@@ -29,11 +29,8 @@ const getmovie = (result, popup, index) => {
   return popup;
 };
 
-const postComments = async (commenturl, id,username,comment) => {
-  console.log(`"${id}"`)
-  console.log(username)
-  console.log(comment)
-  (await fetch(commenturl, {
+const postComments = async (commenturl, id, username, comment) => {
+  await fetch(commenturl, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -43,7 +40,7 @@ const postComments = async (commenturl, id,username,comment) => {
       username: `${username}`,
       comment: `${comment}`,
     }),
-  }));
+  });
 };
 
 export { getmovie, postComments };
