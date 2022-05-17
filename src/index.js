@@ -36,7 +36,11 @@ myPromise.then((result) => {
     likesnum=api.likes(result)
 
   liketext.forEach((element,index)=>{
+    if(likesnum[index]<=1){
+      element.textContent=`${likesnum[index]} like`
+    }else{
     element.textContent=`${likesnum[index]} likes`
+    }
   })
   })
 });

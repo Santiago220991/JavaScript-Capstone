@@ -6,9 +6,17 @@ header {
   column-gap: 100px;
 }
 
+
 header img {
   width: 300px;
   height: 100px;
+  animation-name: showlogo ;
+  animation-duration: 4s;
+}
+
+@keyframes showlogo{
+  from{width: 1px; height: 1px;}
+  to{width:300px; height: 100px; }
 }
 
 #categories {
@@ -44,6 +52,13 @@ header img {
 .poster {
   width: 100%;
   height: 100%;
+  animation-name: showitems ;
+  animation-duration: 1s;
+}
+
+@keyframes showitems{
+from{width: 1px; height: 1px;}
+to{width: 100%; height: 100%;}
 }
 
 .like {
