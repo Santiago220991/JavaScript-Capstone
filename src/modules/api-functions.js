@@ -21,6 +21,18 @@ const likes = (likesnum) => {
   return likesnum;
 };
 
+const postlike = async (newlikeurl, index) => {
+  await fetch(newlikeurl, {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: `item${index + 1}`,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+};
+
 export {
-  getdata, getimg, getlikes, likes,
+  getdata, getimg, getlikes, likes, postlike,
 };
