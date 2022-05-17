@@ -15,20 +15,24 @@ const getmovie = (result, popup, index) => {
                     <p>Language: ${result.language}</p>
                 </div>
             </div>
-            <h4 class="comment-${result.id}"></h4>
-            <ul class="comment-list-${result.id} comment-list"></ul>
+            <h4 class="comments"></h4>
+            <ul class="comment-list"></ul>
             <form class="comment-form">
                 <h4 class="addcom">Add comment</h4>
-                <input type="text" id="username-${result.id}" class="username" placeholder="Your name" required><br>
-                <textarea type="text" id="insight-${result.id}" class="insight" placeholder="Your insight" required></textarea><br>
-                <button type="submit" id="addnew" data-id='${result.id}' class="addnew-btn">Comment</button>
+                <input type="text" id="username" class="username" placeholder="Your name" required><br>
+                <textarea type="text" id="insight" class="insight" placeholder="Your insight" required></textarea><br>
+                <p id="addnew" class="addnew-btn">Comment</p>
             </form>
+            <p class=message></p>
         </div>
     </div>`;
   return popup;
 };
 
-const postComments = async (commenturl, id) => {
+const postComments = async (commenturl, id,username,comment) => {
+  console.log(`"${id}"`)
+  console.log(username)
+  console.log(comment)
   (await fetch(commenturl, {
     method: 'POST',
     headers: {
@@ -36,10 +40,10 @@ const postComments = async (commenturl, id) => {
     },
     body: JSON.stringify({
       item_id: `${id}`,
-      username: document.getElementById(`username-${id}`).value,
-      comment: document.getElementById(`insight-${id}`).value,
+      username: `${username}`,
+      comment: `${comment}`,
     }),
-  })).json();
+  }));
 };
 
 export { getmovie, postComments };

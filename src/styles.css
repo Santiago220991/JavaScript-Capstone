@@ -200,6 +200,14 @@ textarea[type="text"] {
   margin-top: 10px;
 }
 
+.message{
+  display:none;
+}
+
+.message.active{
+  display:block;
+}
+
 footer {
   border: solid black 2px;
 }

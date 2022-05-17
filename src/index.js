@@ -10,7 +10,6 @@ const apiurl = 'https://api.tvmaze.com/search/shows?q=comedy';
 const popup = document.querySelector('.modal');
 const movies = document.querySelector('#movietotal');
 const likesurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
-const newlikeurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
 const commenturl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/comments/';
 
 let likesnum;
@@ -18,6 +17,10 @@ let imgurl;
 let likescounter;
 let itemscounter;
 logo.src = moviesimg;
+
+const hide = (msg) => {
+  msg.classList.remove('active');
+};
 
 const myPromise = new Promise((resolve) => {
   resolve(api.getdata(apiurl));
@@ -53,19 +56,26 @@ myPromise.then((result) => {
       const close = document.querySelector('.close-button');
       close.addEventListener('click', () => {
         popupinfo.remove();
-        const commenttext = document.querySelectorAll('.addnew-btn');
-  commenttext.forEach((element, id) => {
-    element.addEventListener('click', (e) => {
-      e.preventDefault();
-      // api.postlike(newlikeurl, index);
-      postComments(commenturl, id);
-      document.getElementById(`username-${element.dataset.id}`).value = '';
-      document.getElementById(`insight-${element.dataset.id}`).value = '';
-    });
-  });
       });
+  const inputname=document.querySelector(".username")
+  const inputtext=document.querySelector(".insight")
+  const commenttext = document.querySelector('.addnew-btn');
+  const message=document.querySelector(".message")
+  commenttext.addEventListener('click', () => {
+    if(inputname.value!==""&& inputtext.value!==""){
+      postComments(commenturl, index,inputname.value,inputtext.value);
+      inputname.value = '';
+      inputtext.value = '';
+    }else{
+      message.textContent="Inputs should not be empty"
+      message.classList.add("active")
+      setTimeout(()=>{hide(message)}, 2000);
+    }
     });
   });
+      
+    });
+
   const liketext = document.querySelectorAll('.like-text');
   const likebutton = document.querySelectorAll('.like');
   mypromiseb.then((result) => {
@@ -80,7 +90,7 @@ myPromise.then((result) => {
     });
     likebutton.forEach((element, index) => {
       element.addEventListener('click', () => {
-        api.postlike(newlikeurl, index);
+        api.postlike(likesurl, index);
         likescounter[index] += +1;
         liketext.forEach((element, index) => {
           if (likesnum[index] <= 1) {
