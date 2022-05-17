@@ -10,7 +10,6 @@ const apiurl = 'https://api.tvmaze.com/search/shows?q=comedy';
 const popup = document.querySelector('.modal');
 const movies = document.querySelector('#movietotal');
 const likesurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
-const newlikeurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
 
 let likesnum;
 let imgurl;
@@ -69,7 +68,7 @@ myPromise.then((result) => {
     });
     likebutton.forEach((element, index) => {
       element.addEventListener('click', () => {
-        api.postlike(newlikeurl, index);
+        api.postlike(likesurl, index);
         likescounter[index] += +1;
         liketext.forEach((element, index) => {
           if (likesnum[index] <= 1) {
