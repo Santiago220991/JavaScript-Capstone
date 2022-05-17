@@ -81,6 +81,83 @@ header img {
   font-weight: bolder;
 }
 
+.modal {
+  display: none;
+  position: absolute;
+  background-color: antiquewhite;
+  width: 60%;
+  height: 100%;
+  z-index: 200;
+  margin-top: 4rem;
+  margin-left: 50px;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+
+.close-button {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: -0.5rem -0.5rem -0.5rem auto;
+}
+
+.modal img {
+  width: 70%;
+  margin-left: 80px;
+  height: 220px;
+  margin-top: 30px;
+}
+
+.movie-title {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.movie-info {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  margin-top: 0;
+  gap: 25px;
+}
+
+.addcom {
+  display: flex;
+  justify-content: center;
+}
+
+input[type="text"],
+textarea[type="text"] {
+  margin-left: 200px;
+  width: 30%;
+  margin-top: 10px;
+}
+
+.addnew-btn {
+  margin-left: 200px;
+  width: 20%;
+  margin-top: 10px;
+}
+
 footer {
   border: solid black 2px;
 }
