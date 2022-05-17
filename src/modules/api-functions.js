@@ -33,6 +33,7 @@ const postlike = async (newlikeurl, index) => {
   });
 };
 
+const totalitems = (result) => result.length;
 export {
-  getdata, getimg, getlikes, likes, postlike,
+  getdata, getimg, getlikes, likes, postlike, totalitems,
 };

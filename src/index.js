@@ -8,12 +8,14 @@ const section = document.querySelector('.moviediv');
 const logo = document.querySelector('header img');
 const apiurl = 'https://api.tvmaze.com/search/shows?q=comedy';
 const popup = document.querySelector('.modal');
+const movies = document.querySelector('#movietotal');
 const likesurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
 const newlikeurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
 
 let likesnum;
 let imgurl;
 let likescounter;
+let itemscounter;
 logo.src = moviesimg;
 
 const myPromise = new Promise((resolve) => {
@@ -26,6 +28,8 @@ const mypromiseb = new Promise((resolve) => {
 
 myPromise.then((result) => {
   imgurl = api.getimg(result);
+  itemscounter = api.totalitems(result);
+  movies.textContent = `Movies(${itemscounter})`;
   imgurl.forEach((element, index) => {
     section.innerHTML += `<div class="item">
         <img class="poster" src="${element}" alt="Italian Trulli">
