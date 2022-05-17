@@ -6,7 +6,7 @@ import moviesimg from './movies_img.png';
 const section = document.querySelector('.moviediv');
 const logo = document.querySelector('header img');
 const apiurl = 'https://api.tvmaze.com/search/shows?q=comedy';
-const likesurl="https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/"
+const likesurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
 
 let imgurl;
 let likesnum;
@@ -14,6 +14,10 @@ logo.src = moviesimg;
 
 const myPromise = new Promise((resolve) => {
   resolve(api.getdata(apiurl));
+});
+
+const mypromiseb = new Promise((resolve) => {
+  resolve(api.getlikes(likesurl));
 });
 
 myPromise.then((result) => {
@@ -31,20 +35,16 @@ myPromise.then((result) => {
         <p class="reservations">Reservations</p>  
         </div>`;
   });
-  const liketext=document.querySelectorAll(".like-text");
-  mypromiseb.then(result=>{
-    likesnum=api.likes(result)
+  const liketext = document.querySelectorAll('.like-text');
+  mypromiseb.then((result) => {
+    likesnum = api.likes(result);
 
-  liketext.forEach((element,index)=>{
-    if(likesnum[index]<=1){
-      element.textContent=`${likesnum[index]} like`
-    }else{
-    element.textContent=`${likesnum[index]} likes`
-    }
-  })
-  })
+    liketext.forEach((element, index) => {
+      if (likesnum[index] <= 1) {
+        element.textContent = `${likesnum[index]} like`;
+      } else {
+        element.textContent = `${likesnum[index]} likes`;
+      }
+    });
+  });
 });
-
-const mypromiseb=new Promise((resolve)=>{
-  resolve(api.getlikes(likesurl))
-})
