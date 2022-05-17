@@ -10,4 +10,17 @@ const getimg = (imgurl) => {
   return imgurl;
 };
 
-export { getdata, getimg };
+const getlikes = async (likesurl) => {
+  let response = await fetch(likesurl);
+  response = await response.json();
+  return response;
+};
+
+const likes = (likesnum) => {
+  likesnum = likesnum.map((a) => a.likes);
+  return likesnum;
+};
+
+export {
+  getdata, getimg, getlikes, likes,
+};

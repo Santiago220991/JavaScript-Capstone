@@ -9,11 +9,17 @@ const logo = document.querySelector('header img');
 const apiurl = 'https://api.tvmaze.com/search/shows?q=comedy';
 const popup = document.querySelector('.modal');
 let imgurl;
+const likesurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
 
+let likesnum;
 logo.src = moviesimg;
 
 const myPromise = new Promise((resolve) => {
   resolve(api.getdata(apiurl));
+});
+
+const mypromiseb = new Promise((resolve) => {
+  resolve(api.getlikes(likesurl));
 });
 
 myPromise.then((result) => {
@@ -24,7 +30,7 @@ myPromise.then((result) => {
         <div class="title"><p>${result[index].name}</p>
         <div>
         <img class="like" src="${likeimg}">
-        <p class="like-text">5 likes</p>
+        <p class="like-text"> </p>
         </div>
         </div>
        <button><p class="comments" id="commentid" >Comments</p></button>
@@ -41,6 +47,18 @@ myPromise.then((result) => {
       close.addEventListener('click', () => {
         popupinfo.remove();
       });
+});
+})
+const liketext = document.querySelectorAll('.like-text');
+  mypromiseb.then((result) => {
+    likesnum = api.likes(result);
+
+    liketext.forEach((element, index) => {
+      if (likesnum[index] <= 1) {
+        element.textContent = `${likesnum[index]} like`;
+      } else {
+        element.textContent = `${likesnum[index]} likes`;
+      }
     });
   });
-});
+})
