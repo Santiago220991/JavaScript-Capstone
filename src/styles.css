@@ -121,14 +121,16 @@ header img {
   font-weight: bolder;
 }
 
+
 .modal {
   display: none;
-  position: absolute;
+  position: fixed;
   background-color: antiquewhite;
   width: 60%;
   height: 100%;
   z-index: 200;
   margin-top: 4rem;
+  bottom: 0;
   margin-left: 50px;
 }
 

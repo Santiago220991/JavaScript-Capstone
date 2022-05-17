@@ -2,7 +2,7 @@ import './styles.css';
 import * as api from './modules/api-functions.js';
 import likeimg from './like_img.png';
 import moviesimg from './movies_img.png';
-import getmovie from './modules/popup.js';
+import { postComments, getmovie } from './modules/popup.js';
 
 const section = document.querySelector('.moviediv');
 const logo = document.querySelector('header img');
@@ -11,6 +11,7 @@ const popup = document.querySelector('.modal');
 const movies = document.querySelector('#movietotal');
 const likesurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
 const newlikeurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
+const commenturl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/comments/';
 
 let likesnum;
 let imgurl;
@@ -52,6 +53,16 @@ myPromise.then((result) => {
       const close = document.querySelector('.close-button');
       close.addEventListener('click', () => {
         popupinfo.remove();
+        const commenttext = document.querySelectorAll('.addnew-btn');
+  commenttext.forEach((element, id) => {
+    element.addEventListener('click', (e) => {
+      e.preventDefault();
+      // api.postlike(newlikeurl, index);
+      postComments(commenturl, id);
+      document.getElementById(`username-${element.dataset.id}`).value = '';
+      document.getElementById(`insight-${element.dataset.id}`).value = '';
+    });
+  });
       });
     });
   });
@@ -81,4 +92,5 @@ myPromise.then((result) => {
       });
     });
   });
+  
 });

@@ -28,4 +28,18 @@ const getmovie = (result, popup, index) => {
   return popup;
 };
 
-export default getmovie;
+const postComments = async (commenturl, id) => {
+  (await fetch(commenturl, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: `${id}`,
+      username: document.getElementById(`username-${id}`).value,
+      comment: document.getElementById(`insight-${id}`).value,
+    }),
+  })).json();
+};
+
+export { getmovie, postComments };
