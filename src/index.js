@@ -9,7 +9,7 @@ const logo = document.querySelector('header img');
 const apiurl = 'https://api.tvmaze.com/search/shows?q=comedy';
 const popup = document.querySelector('.modal');
 const likesurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
-const newlikeurl = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/"
+const newlikeurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
 
 let likesnum;
 let imgurl;
@@ -49,13 +49,13 @@ myPromise.then((result) => {
       close.addEventListener('click', () => {
         popupinfo.remove();
       });
-});
-})
-const liketext = document.querySelectorAll('.like-text');
-const likebutton=document.querySelectorAll(".like")
+    });
+  });
+  const liketext = document.querySelectorAll('.like-text');
+  const likebutton = document.querySelectorAll('.like');
   mypromiseb.then((result) => {
     likesnum = api.likes(result);
-    likescounter=likesnum
+    likescounter = likesnum;
     liketext.forEach((element, index) => {
       if (likesnum[index] <= 1) {
         element.textContent = `${likesnum[index]} like`;
@@ -63,18 +63,18 @@ const likebutton=document.querySelectorAll(".like")
         element.textContent = `${likesnum[index]} likes`;
       }
     });
-    likebutton.forEach((element,index)=>{
-      element.addEventListener("click",()=>{
-       api.postlike(newlikeurl,index)
-       likescounter[index]=likescounter[index]+1
-       liketext.forEach((element, index) => {
-         if (likesnum[index] <= 1) {
-           element.textContent = `${likescounter[index]} like`;
-         } else {
-           element.textContent = `${likescounter[index]} likes`;
-         }
-       });
-      })
-    })
+    likebutton.forEach((element, index) => {
+      element.addEventListener('click', () => {
+        api.postlike(newlikeurl, index);
+        likescounter[index] += +1;
+        liketext.forEach((element, index) => {
+          if (likesnum[index] <= 1) {
+            element.textContent = `${likescounter[index]} like`;
+          } else {
+            element.textContent = `${likescounter[index]} likes`;
+          }
+        });
+      });
+    });
   });
-})
+});
