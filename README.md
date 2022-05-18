@@ -4,6 +4,7 @@
 
 > JavaScript Capstone Project
 
+![JavaScript Capstone](https://user-images.githubusercontent.com/98363075/169161649-ceea4d8c-7144-42fa-a44a-e136634740a4.png)
 
 ## Built With
 
