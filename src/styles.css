@@ -82,7 +82,8 @@ header img {
 }
 
 .like:active {
-  filter: invert(16%) sepia(99%) saturate(7404%) hue-rotate(4deg)
+  filter:
+    invert(16%) sepia(99%) saturate(7404%) hue-rotate(4deg)
     brightness(95%) contrast(118%);
 }
 
