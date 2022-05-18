@@ -15,13 +15,13 @@ const getmovie = (result, popup, index) => {
                     <p>Language: ${result.language}</p>
                 </div>
             </div>
-            <h3 class="commentsp"></h3>
-            <ul class="comment-list"></ul>
+            <h3 class="comment-${movie.id}">comments()</h3>
+            <ul class="comment-list-${movie.id} comment-list"></ul>
             <form class="comment-form">
                 <h4 class="addcom">Add comment</h4>
-                <input type="text" id="username" class="username" placeholder="Your name" required><br>
-                <textarea type="text" id="insight" class="insight" placeholder="Your insight" required></textarea><br>
-                <p id="addnew" class="addnew-btn">Comment</p>
+                <input type="text" id="username-${movie.id}" class="username" placeholder="Your name" required><br>
+                <textarea type="text" id="insight-${movie.id}" class="insight" placeholder="Your insight" required></textarea><br>
+                <p id="addnew" data-id='${movie.id}' class="addnew-btn">Comment</p>
             </form>
             <p class=message></p>
         </div>
