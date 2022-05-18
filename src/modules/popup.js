@@ -15,7 +15,7 @@ const getmovie = (result, popup, index) => {
                     <p>Language: ${result.language}</p>
                 </div>
             </div>
-            <h3 class="commentsp">comments()</h3>
+            <h3 class="commentsp">comments(</h3>
             <ul class="comment-list"></ul>
             <form class="comment-form">
                 <h4 class="addcom">Add comment</h4>

@@ -63,7 +63,9 @@ myPromise.then((result) => {
         popupinfo.remove();
       });
       const commentdiv = document.querySelector('.comment-list');
+      const count = document.querySelector('.commentsp');
       mypromisec.then((commentarr) => {
+        count.textContent = `Comments(${commentarr.length})`;
         commentarr.forEach((element) => {
           commentdiv.innerHTML += `<li class="comments-li">${element.creation_date}  ${element.username}:  ${element.comment}</li>`;
         });
@@ -75,24 +77,30 @@ myPromise.then((result) => {
       commenttext.addEventListener('click', () => {
         if (inputname.value !== '' && inputtext.value !== '') {
           postComments(commenturl, index, inputname.value, inputtext.value);
+          const [date] = new Date().toISOString().split('T');
+          commentdiv.innerHTML += `<li class="comments-li">${date}  ${inputname.value}:  ${inputtext.value}</li>`;
+          const commentdivlist = document.querySelectorAll('.comment-list li');
+          count.textContent = `Comments(${commentdivlist.length})`;
           inputname.value = '';
           inputtext.value = '';
         } else {
           message.textContent = 'Inputs should not be empty';
           message.classList.add('active');
-          setTimeout(() => { hide(message); }, 2000);
-          const list = document.querySelectorAll(`.list-item-${id}`);
-          const counts = document.querySelector(`.comment-${id}`);
+          setTimeout(() => {
+            hide(message);
+          }, 2000);
+          const list = document.querySelectorAll('.list-item');
+          const counts = document.querySelector('.comment');
           commentCounter[index] += +1;
           commenttext.forEach((comments, index) => {
             if (list[index] <= 1) {
-              counts.textContent = `Comments (${list.length})`;;
+              counts.textContent = `Comments (${list.length})`;
             } else {
-              counts.textContent = 'Comments (0)';;
+              counts.textContent = 'Comments (0)';
             }
-            commentCounter.classList.add('active');       
-        });
-      }
+            commentCounter.classList.add('active');
+          });
+        }
       });
     });
   });

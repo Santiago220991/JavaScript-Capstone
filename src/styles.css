@@ -82,8 +82,7 @@ header img {
 }
 
 .like:active {
-  filter:
-    invert(16%) sepia(99%) saturate(7404%) hue-rotate(4deg)
+  filter: invert(16%) sepia(99%) saturate(7404%) hue-rotate(4deg)
     brightness(95%) contrast(118%);
 }
 
@@ -209,7 +208,9 @@ header img {
 }
 
 .addnew-btn {
-  width: 20%;
+  background-color: gray;
+  border: 1px solid;
+  width: 30%;
   margin-top: 10px;
 }
 
