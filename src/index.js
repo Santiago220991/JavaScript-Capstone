@@ -17,6 +17,7 @@ let likesnum;
 let imgurl;
 let likescounter;
 let itemscounter;
+let commentCounter;
 logo.src = moviesimg;
 
 const hide = (msg) => {
@@ -80,7 +81,18 @@ myPromise.then((result) => {
           message.textContent = 'Inputs should not be empty';
           message.classList.add('active');
           setTimeout(() => { hide(message); }, 2000);
-        }
+          const list = document.querySelectorAll(`.list-item-${id}`);
+          const counts = document.querySelector(`.comment-${id}`);
+          commentCounter[index] += +1;
+          commenttext.forEach((comments, index) => {
+            if (list[index] <= 1) {
+              counts.textContent = `Comments (${list.length})`;;
+            } else {
+              counts.textContent = 'Comments (0)';;
+            }
+            commentCounter.classList.add('active');       
+        });
+      }
       });
     });
   });

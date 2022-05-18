@@ -7,7 +7,7 @@ const getmovie = (result, popup, index) => {
             <h2 class="movie-title">${result.name}</h2>
             <div class="movie-info">
                 <div class="movie-info1">
-                    <p>Rating: ${result.rating.average}</p>
+                    <p>Premiered: ${result.premiered}</p>
                     <p>Type: ${result.type}</p> 
                 </div>
                 <div class="movie-info2">
