@@ -2,7 +2,7 @@ import './styles.css';
 import * as api from './modules/api-functions.js';
 import likeimg from './like_img.png';
 import moviesimg from './movies_img.png';
-import getmovie from './modules/popup.js';
+import { postComments, getmovie, getcomments } from './modules/popup.js';
 
 const section = document.querySelector('.moviediv');
 const logo = document.querySelector('header img');
@@ -10,13 +10,18 @@ const apiurl = 'https://api.tvmaze.com/search/shows?q=comedy';
 const popup = document.querySelector('.modal');
 const movies = document.querySelector('#movietotal');
 const likesurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
-const newlikeurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
+const commenturl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/comments/';
+const comments = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/comments?item_id=';
 
 let likesnum;
 let imgurl;
 let likescounter;
 let itemscounter;
 logo.src = moviesimg;
+
+const hide = (msg) => {
+  msg.classList.remove('active');
+};
 
 const myPromise = new Promise((resolve) => {
   resolve(api.getdata(apiurl));
@@ -46,6 +51,9 @@ myPromise.then((result) => {
   const commentbutton = document.querySelectorAll('.comments');
   commentbutton.forEach((element, index) => {
     element.addEventListener('click', () => {
+      const mypromisec = new Promise((resolve) => {
+        resolve(getcomments(comments, index));
+      });
       const popupinfo = getmovie(result, popup, index);
       section.append(popupinfo);
       popupinfo.classList.add('active');
@@ -53,8 +61,30 @@ myPromise.then((result) => {
       close.addEventListener('click', () => {
         popupinfo.remove();
       });
+      const commentdiv = document.querySelector('.comment-list');
+      mypromisec.then((commentarr) => {
+        commentarr.forEach((element) => {
+          commentdiv.innerHTML += `<li class="comments-li">${element.creation_date}  ${element.username}:  ${element.comment}</li>`;
+        });
+      });
+      const inputname = document.querySelector('.username');
+      const inputtext = document.querySelector('.insight');
+      const commenttext = document.querySelector('.addnew-btn');
+      const message = document.querySelector('.message');
+      commenttext.addEventListener('click', () => {
+        if (inputname.value !== '' && inputtext.value !== '') {
+          postComments(commenturl, index, inputname.value, inputtext.value);
+          inputname.value = '';
+          inputtext.value = '';
+        } else {
+          message.textContent = 'Inputs should not be empty';
+          message.classList.add('active');
+          setTimeout(() => { hide(message); }, 2000);
+        }
+      });
     });
   });
+
   const liketext = document.querySelectorAll('.like-text');
   const likebutton = document.querySelectorAll('.like');
   mypromiseb.then((result) => {
@@ -69,7 +99,7 @@ myPromise.then((result) => {
     });
     likebutton.forEach((element, index) => {
       element.addEventListener('click', () => {
-        api.postlike(newlikeurl, index);
+        api.postlike(likesurl, index);
         likescounter[index] += +1;
         liketext.forEach((element, index) => {
           if (likesnum[index] <= 1) {
