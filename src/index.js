@@ -11,7 +11,7 @@ const popup = document.querySelector('.modal');
 const movies = document.querySelector('#movietotal');
 const likesurl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/likes/';
 const commenturl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/comments/';
-const comments="https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/comments?item_id="
+const comments = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KnDLmrih7aiYfd0ihv9H/comments?item_id=';
 
 let likesnum;
 let imgurl;
@@ -52,7 +52,7 @@ myPromise.then((result) => {
   commentbutton.forEach((element, index) => {
     element.addEventListener('click', () => {
       const mypromisec = new Promise((resolve) => {
-        resolve(getcomments(comments,index));
+        resolve(getcomments(comments, index));
       });
       const popupinfo = getmovie(result, popup, index);
       section.append(popupinfo);
@@ -61,12 +61,12 @@ myPromise.then((result) => {
       close.addEventListener('click', () => {
         popupinfo.remove();
       });
-      const commentdiv=document.querySelector(".comment-list")
-      mypromisec.then(commentarr=>{
-        commentarr.forEach((element,index)=>{
-          commentdiv.innerHTML+=`<li class="comments-li">${element.creation_date}  ${element.username}:  ${element.comment}</li>`
-        })
-      })
+      const commentdiv = document.querySelector('.comment-list');
+      mypromisec.then((commentarr) => {
+        commentarr.forEach((element) => {
+          commentdiv.innerHTML += `<li class="comments-li">${element.creation_date}  ${element.username}:  ${element.comment}</li>`;
+        });
+      });
       const inputname = document.querySelector('.username');
       const inputtext = document.querySelector('.insight');
       const commenttext = document.querySelector('.addnew-btn');

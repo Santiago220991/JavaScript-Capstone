@@ -43,11 +43,10 @@ const postComments = async (commenturl, id, username, comment) => {
   });
 };
 
-const getcomments=async(comments,index)=>{
-let response=await fetch(comments+`${index}`)
-response = await response.json();
-console.log(response)
-return response
-}
+const getcomments = async (comments, index) => {
+  let response = await fetch(`${comments}${index}`);
+  response = await response.json();
+  return response;
+};
 
 export { getmovie, postComments, getcomments };
