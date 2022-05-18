@@ -7,7 +7,7 @@ const getmovie = (result, popup, index) => {
             <h2 class="movie-title">${result.name}</h2>
             <div class="movie-info">
                 <div class="movie-info1">
-                    <p>Rating: ${result.rating.average}</p>
+                    <p>Premiered: ${result.premiered}</p>
                     <p>Type: ${result.type}</p> 
                 </div>
                 <div class="movie-info2">
@@ -15,7 +15,7 @@ const getmovie = (result, popup, index) => {
                     <p>Language: ${result.language}</p>
                 </div>
             </div>
-            <h3 class="commentsp"></h3>
+            <h3 class="commentsp">comments(</h3>
             <ul class="comment-list"></ul>
             <form class="comment-form">
                 <h4 class="addcom">Add comment</h4>

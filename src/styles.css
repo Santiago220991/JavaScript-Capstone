@@ -209,7 +209,9 @@ header img {
 }
 
 .addnew-btn {
-  width: 20%;
+  background-color: gray;
+  border: 1px solid;
+  width: 30%;
   margin-top: 10px;
 }
 
