@@ -181,6 +181,10 @@ header img {
   gap: 25px;
 }
 
+.comments-li{
+  list-style: none;
+}
+
 .addcom {
   display: flex;
   justify-content: center;
