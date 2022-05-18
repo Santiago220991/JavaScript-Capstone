@@ -101,12 +101,15 @@ header img {
   margin-top: 20px;
 }
 
+button{
+  padding: 0;
+}
+
 .comments {
-  border: solid black 1px;
-  padding-top: 8px;
-  padding-bottom: 8px;
   font-size: 18px;
   font-weight: bolder;
+  margin:0;
+  cursor: pointer;
 }
 
 .reservations {
@@ -118,7 +121,6 @@ header img {
 }
 
 .cont-pop-up {
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,13 +129,12 @@ header img {
 .modal {
   display: none;
   position: fixed;
-  background-color: whitesmoke;
+  background-color: rgb(206, 209, 202);
   width: 50%;
   height: 100%;
   bottom: 0;
-  margin-left: 200px;
+  margin-left: 160px;
   overflow-y: scroll;
-  overflow-x: scroll;
 }
 
 .modal.active {
@@ -149,7 +150,7 @@ header img {
   border-bottom: 1px solid #dee2e6;
   border-top-left-radius: calc(0.3rem - 1px);
   border-top-right-radius: calc(0.3rem - 1px);
-  width: 100%;
+  width: 90%;
 }
 
 .close-button {
@@ -163,7 +164,6 @@ header img {
 
 .modal img {
   width: 64%;
-  height: 200px;
   margin-top: 20px;
 }
 
@@ -184,6 +184,17 @@ header img {
   gap: 25px;
 }
 
+.comment-list{
+  width: 80%;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 50px;
+  max-height: 80px;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 8px;
+}
+
 .comments-li {
   list-style: none;
 }
@@ -198,6 +209,7 @@ header img {
   border: 1px solid;
   padding: 2%;
   margin: 4% 0;
+  border-radius: 4px;
 }
 
 .insight {
@@ -206,17 +218,27 @@ header img {
   height: 50px;
   padding: 2%;
   margin: 4% 0;
+  border-radius: 4px;
 }
 
 .addnew-btn {
-  background-color: gray;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(216, 210, 210, 0.822);
   border: 1px solid;
-  width: 30%;
+  width: 65px;
   margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addnew-btn:hover{
+background-color: rgb(86, 192, 206);
 }
 
 .message {
   display: none;
+  color: red;
 }
 
 .message.active {
@@ -231,4 +253,88 @@ footer {
   background-color: rgb(203, 203, 203);
   bottom: 0;
   width: 100%;
+}
+
+
+@media screen and (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    column-gap: 10px;
+  }
+  
+  header img {
+    width: 150px;
+    height: 60px;
+    animation-name: showlogo;
+    animation-duration: 4s;
+  }
+
+  @keyframes showlogo {
+    from {
+      width: 1px;
+      height: 1px;
+    }
+  
+    to {
+      width: 150px;
+      height: 60px;
+    }
+  }
+
+  #categories{
+    column-gap: 10px;
+  }
+  #categories li {
+    list-style: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .title{
+font-size: 14px;
+  }
+
+  .like{
+    width: 20px;
+    height: 20px;
+  }
+  .like-text {
+    font-size: 12px;
+    font-weight: 200;
+  }
+
+  .comments{
+    font-size: 14px;
+}
+
+  .reservations{
+    font-size: 14px;
+  }
+  .moviediv {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    gap: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 50px;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    background-color: rgb(206, 209, 202);
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: -200px;
+    overflow-y: scroll;
+  }
+
+  .comment-form{
+    margin-bottom: 100px;
+  }
 }
