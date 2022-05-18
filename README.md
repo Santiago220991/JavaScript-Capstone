@@ -2,7 +2,7 @@
 
 # Project Name
 
-> Leaderboard
+> JavaScript Capstone Project
 
 
 ## Built With
@@ -10,20 +10,24 @@
 - HTML
 - CSS
 - JavaScript
+- TV Maze API
+- Involvement API
 
 ## Live Demo
 
-[Leaderboard Live Demo](https://santiago220991.github.io/L)
+[Leaderboard Live Demo](https://santiago220991.github.io/JavaScript-Capstone)
 
 ## Getting Started
 
-**This is a Leaderboard web page built using a leaderboard API to store the scores. It shows a simple design with the next features:**
+**This is a movie web page it was built using two APIs. One to get the movie's data and the other to save comments and the number of likes of each movie. This project has the next features:**
 
-- Add a new Name and Score.
+- Add likes to the movies.
 
-- Refresh the Leaderboard.
+- Open a popup window to get more details of the movie.
 
-- This project was made with HTML, CSS and JavaScript.
+- Add a new comment for each movie.
+
+- This project was built with HTML, CSS and JavaScript.
 
 
 To get a local copy up and running follow these simple example steps.
@@ -38,21 +42,24 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author**
+👤 **Santiago**
 
 - GitHub: [@githubhandle](https://github.com/Santiago220991) 
 - Twitter: [@twitterhandle](https://twitter.com/SanCardenas10)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/santiago-cárdenas-671043160/)
 
+👤 **Adaobi**
 
-
+- GitHub: [@githubhandle](https://github.com/adanzeakonobi) 
+- Twitter: [@twitterhandle](https://twitter.com/Adaebubemmuta)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/okoyeaadaobi)
 
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Santiago220991/Leaderboard/issues).
+Feel free to check the [issues page](https://github.com/Santiago220991/JavaScript-Capstone/issues).
 
 ## Acknowledgments
 
