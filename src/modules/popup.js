@@ -17,13 +17,13 @@ const getmovie = (result, popup, index) => {
             </div>
             <h3 class="commentsp">comments(</h3>
             <ul class="comment-list"></ul>
+            <p class=message></p>
             <form class="comment-form">
                 <h4 class="addcom">Add comment</h4>
                 <input type="text" id="username" class="username" placeholder="Your name" required><br>
                 <textarea type="text" id="insight" class="insight" placeholder="Your insight" required></textarea><br>
                 <p id="addnew" class="addnew-btn">Comment</p>
             </form>
-            <p class=message></p>
         </div>
     </div>`;
   return popup;
