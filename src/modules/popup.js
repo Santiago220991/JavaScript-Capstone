@@ -49,4 +49,11 @@ const getcomments = async (comments, index) => {
   return response;
 };
 
-export { getmovie, postComments, getcomments };
+const totalcomments = (comments) => {
+  comments = comments.length;
+  return comments;
+};
+
+export {
+  getmovie, postComments, getcomments, totalcomments,
+};

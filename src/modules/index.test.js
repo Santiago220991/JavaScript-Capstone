@@ -1,4 +1,5 @@
 import { getdata, totalitems } from './api-functions.js';
+import { totalcomments } from './popup.js';
 
 const apiurl = 'https://api.tvmaze.com/search/shows?q=comedy';
 
@@ -17,8 +18,21 @@ global.fetch = jest.fn(() => Promise.resolve({
   ]),
 }));
 
+const commentsdiv = [
+  'li.coments-li',
+  'li.coments-li',
+  'li.coments-li',
+  'li.coments-li',
+  'li.coments-li',
+
+];
+
 test('Verify homepage items counter', async () => {
   let result = await getdata(apiurl);
   result = totalitems(result);
   expect(result).toBe(10);
+});
+
+test('Verify pop comments counter', () => {
+  expect(totalcomments(commentsdiv)).toBe(5);
 });

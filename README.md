@@ -16,7 +16,7 @@
 
 ## Live Demo
 
-[Leaderboard Live Demo](https://santiago220991.github.io/JavaScript-Capstone)
+[Javascript Capstone Live Demo](https://santiago220991.github.io/JavaScript-Capstone)
 
 ## Getting Started
 

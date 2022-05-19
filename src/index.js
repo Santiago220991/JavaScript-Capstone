@@ -2,7 +2,9 @@ import './styles.css';
 import * as api from './modules/api-functions.js';
 import likeimg from './like_img.png';
 import moviesimg from './movies_img.png';
-import { postComments, getmovie, getcomments } from './modules/popup.js';
+import {
+  postComments, getmovie, getcomments, totalcomments,
+} from './modules/popup.js';
 
 const section = document.querySelector('.moviediv');
 const logo = document.querySelector('header img');
@@ -80,7 +82,8 @@ myPromise.then((result) => {
           const [date] = new Date().toISOString().split('T');
           commentdiv.innerHTML += `<li class="comments-li">${date}  ${inputname.value}:  ${inputtext.value}</li>`;
           const commentdivlist = document.querySelectorAll('.comment-list li');
-          count.textContent = `Comments(${commentdivlist.length})`;
+          const commentstotal = totalcomments(commentdivlist);
+          count.textContent = `Comments(${commentstotal})`;
           inputname.value = '';
           inputtext.value = '';
         } else {
