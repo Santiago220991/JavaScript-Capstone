@@ -101,14 +101,14 @@ header img {
   margin-top: 20px;
 }
 
-button{
+button {
   padding: 0;
 }
 
 .comments {
   font-size: 18px;
   font-weight: bolder;
-  margin:0;
+  margin: 0;
   cursor: pointer;
 }
 
@@ -184,7 +184,7 @@ button{
   gap: 25px;
 }
 
-.comment-list{
+.comment-list {
   width: 80%;
   padding-left: 10px;
   padding-right: 10px;
@@ -232,8 +232,8 @@ button{
   cursor: pointer;
 }
 
-.addnew-btn:hover{
-background-color: rgb(86, 192, 206);
+.addnew-btn:hover {
+  background-color: rgb(86, 192, 206);
 }
 
 .message {
@@ -255,7 +255,6 @@ footer {
   width: 100%;
 }
 
-
 @media screen and (max-width: 768px) {
   header {
     display: flex;
@@ -264,7 +263,7 @@ footer {
     margin-bottom: 20px;
     column-gap: 10px;
   }
-  
+
   header img {
     width: 150px;
     height: 60px;
@@ -277,42 +276,45 @@ footer {
       width: 1px;
       height: 1px;
     }
-  
+
     to {
       width: 150px;
       height: 60px;
     }
   }
 
-  #categories{
+  #categories {
     column-gap: 10px;
   }
+
   #categories li {
     list-style: none;
     font-size: 16px;
     font-weight: bold;
   }
 
-  .title{
-font-size: 14px;
+  .title {
+    font-size: 14px;
   }
 
-  .like{
+  .like {
     width: 20px;
     height: 20px;
   }
+
   .like-text {
     font-size: 12px;
     font-weight: 200;
   }
 
-  .comments{
-    font-size: 14px;
-}
-
-  .reservations{
+  .comments {
     font-size: 14px;
   }
+
+  .reservations {
+    font-size: 14px;
+  }
+
   .moviediv {
     display: grid;
     grid-template-columns: 100%;
@@ -334,7 +336,7 @@ font-size: 14px;
     overflow-y: scroll;
   }
 
-  .comment-form{
+  .comment-form {
     margin-bottom: 100px;
   }
 }
