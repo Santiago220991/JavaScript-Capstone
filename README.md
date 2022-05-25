@@ -1,8 +1,13 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# JavaScript Capstone Project
 
-> JavaScript Capstone Project
+> **This is a movie web page it was built using two APIs. One to get the movie's data and the other to save comments and the number of likes of each movie. This project has the next features:**
+
+- Add likes to the movies.
+- Open a popup window to get more details of the movie.
+- Add a new comment for each movie.
+- This project was built with HTML, CSS and JavaScript.
 
 ![JavaScript Capstone](https://user-images.githubusercontent.com/98363075/169161649-ceea4d8c-7144-42fa-a44a-e136634740a4.png)
 
@@ -19,17 +24,6 @@
 [Javascript Capstone Live Demo](https://santiago220991.github.io/JavaScript-Capstone/dist)
 
 ## Getting Started
-
-**This is a movie web page it was built using two APIs. One to get the movie's data and the other to save comments and the number of likes of each movie. This project has the next features:**
-
-- Add likes to the movies.
-
-- Open a popup window to get more details of the movie.
-
-- Add a new comment for each movie.
-
-- This project was built with HTML, CSS and JavaScript.
-
 
 To get a local copy up and running follow these simple example steps.
 
