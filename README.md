@@ -9,7 +9,11 @@
 - Add a new comment for each movie.
 - This project was built with HTML, CSS and JavaScript.
 
-![JavaScript Capstone](https://user-images.githubusercontent.com/98363075/169161649-ceea4d8c-7144-42fa-a44a-e136634740a4.png)
+
+
+https://user-images.githubusercontent.com/98363075/170769211-740da6f4-f752-4d35-ba91-a8a024482212.mp4
+
+
 
 ## Built With
 
