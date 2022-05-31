@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# JavaScript Capstone Project
+# Commedy Movies Web Page
 
 > **This is a movie web page it was built using two APIs. One to get the movie's data and the other to save comments and the number of likes of each movie. This project has the next features:**
 
