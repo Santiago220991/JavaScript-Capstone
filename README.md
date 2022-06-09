@@ -9,6 +9,7 @@
 - Add a new comment for each movie.
 - This project was built with HTML, CSS and JavaScript.
 
+![Movies Webpage](https://user-images.githubusercontent.com/98363075/172874651-7c73b26f-4b7b-4292-bab7-1372173cc812.png)
 
 
 https://user-images.githubusercontent.com/98363075/170769211-740da6f4-f752-4d35-ba91-a8a024482212.mp4
